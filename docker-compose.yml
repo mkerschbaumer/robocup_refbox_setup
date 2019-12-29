@@ -1,0 +1,33 @@
+version: '3'
+services:
+    refbox-server:
+        image: mkerschbaumer/robocup_refbox_docker
+        command: refbox
+        network_mode: host
+    refbox-client:
+        image: mkerschbaumer/robocup_refbox_client_docker
+        network_mode: host
+        volumes:
+        - ./robot_example_ros.launch:/home/ros/src/atwork_refbox_ros_client/ros/launch/robot_example_ros.launch
+        depends_on:
+        - refbox-server
+    controller:
+        image: mkerschbaumer/robocup_refbox_docker
+        command: controller
+        network_mode: host
+        environment:
+        - DISPLAY=${DISPLAY}
+        volumes:
+        - /tmp/.X11-unix:/tmp/.X11-unix
+        depends_on:
+        - refbox-server
+    viewer:
+        image: mkerschbaumer/robocup_refbox_docker
+        command: viewer
+        network_mode: host
+        environment:
+        - DISPLAY=${DISPLAY}
+        volumes:
+        - /tmp/.X11-unix:/tmp/.X11-unix
+        depends_on:
+        - refbox-server
