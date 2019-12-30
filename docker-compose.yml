@@ -4,6 +4,8 @@ services:
         image: mkerschbaumer/robocup_refbox_docker
         command: refbox
         network_mode: host
+        volumes:
+        - ./config.yaml:/home/ros/refbox/cfg/config.yaml
     refbox-client:
         image: mkerschbaumer/robocup_refbox_client_docker
         network_mode: host
