@@ -7,24 +7,24 @@
         <param name="host_name" type="string" value="localhost"/>
 
         <!-- refree box port when it is running on remote machine as client -->
-        <param name="public_port" type="int" value="4444"/>
+        <param name="public_port" type="int" value="5444"/>
 
         <!-- refree box ports when it is running on same machine as client -->
-        <param name="refbox_send_port" type="int" value="4444"/>
-        <param name="refbox_recv_port" type="int" value="4445"/>
+        <param name="refbox_send_port" type="int" value="5444"/>
+        <param name="refbox_recv_port" type="int" value="5445"/>
 
         <!-- client/team port when refbox is running on remote machine -->
-        <param name="team_port" type="int" value="4446"/>
+        <param name="team_port" type="int" value="5470"/>
 
         <!-- client/team port when refbox is running on same machine -->
-        <param name="team_recv_port" type="int" value="4446"/>
-        <param name="team_send_port" type="int" value="4447"/>
+        <param name="team_recv_port" type="int" value="5470"/>
+        <param name="team_send_port" type="int" value="5471"/>
 
         <!-- robot name -->
-        <param name="robot_name" type="string" value="rip-yb-5"/>
+        <param name="robot_name" type="string" value="UIBK-robot"/>
 
         <!-- team name specified in refbox configuration --> 
-        <param name="team_name" type="string" value="b-it-bots"/>
+        <param name="team_name" type="string" value="UIBK"/>
     </node>
 </launch>
 

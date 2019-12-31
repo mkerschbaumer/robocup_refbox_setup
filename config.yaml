@@ -40,7 +40,7 @@ llsfrb:
     server-port: !tcp-port 5444
 
     public-peer:
-      host: !ipv4 192.168.1.255
+      host: !ipv4 127.0.0.1
       #port: !udp-port 5444
       send-port: !udp-port 5444
       recv-port: !udp-port 5445
@@ -117,6 +117,12 @@ llsfrb:
       #send-port: !udp-port 5468
       #recv-port: !udp-port 5469
 
+    UIBK-peer:
+      host: !ipv4 127.0.0.1
+      #port: !udp-port 5470
+      send-port: !udp-port 5470
+      recv-port: !udp-port 5471
+
   mongodb:
     enable: false 
     hostport: localhost
@@ -126,7 +132,7 @@ llsfrb:
       protobuf: llsfrb.protobuf
 
   game:
-    teams: [b-it-bots, smARTLab, SPQR, V-Climber, LUHbots, WF-Wolves, AutonOHM, RobOTTO, MRL, AMSTT, Robo-Erectus, Fontys]
+    teams: [b-it-bots, smARTLab, SPQR, V-Climber, LUHbots, WF-Wolves, AutonOHM, RobOTTO, MRL, AMSTT, Robo-Erectus, Fontys, UIBK]
     crypto-keys:
       b-it-bots: randomkey
       smARTLab: randomkey
@@ -140,6 +146,7 @@ llsfrb:
       AMSTT: randomkey
       Robo-Erectus: randomkey
       Fontys: randomkey
+      UIBK: randomkey
 
   shell:
     refbox-host: !ipv4 localhost
